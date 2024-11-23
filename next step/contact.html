@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NextStep</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contact-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+            gap: 20px;
+        }
+
+        .contact-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-left img {
+            width: 450px;
+            margin-bottom: 20px;
+        }
+
+        .contact-left h2 {
+            color: #6c41f3;
+            font-weight: 600;
+            font-size: 2em;
+        }
+
+        .contact-left p {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .contact-left a {
+            color: #6c41f3;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-right {
+            flex: 1;
+        }
+
+        .contact-right form {
+            display: flex;
+            flex-direction: column;
+            
+            gap: 15px;
+        }
+
+        .contact-right label {
+            font-size: 1em;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .contact-right input,
+        .contact-right textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .contact-right textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .contact-right small {
+            color: #9b59b6;
+            font-size: 0.9em;
+        }
+
+        .contact-right button {
+            background-color: #6c41f3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-right button:hover {
+            background-color: #5631c9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-container">
+        <!-- Left Section -->
+        <div class="contact-left">
+            <img src="Photos/background.jpg" alt="Paper Plane Image"> <!-- Replace with the actual image path -->
+            <h2>CONTACT US</h2>
+            
+        </div>
+
+        <!-- Right Section -->
+        <div class="contact-right">
+            <form action="#" method="post">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <small>We'll never share your email with anyone else.</small>
+
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="message">Your message</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

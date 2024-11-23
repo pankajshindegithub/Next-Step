@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>NextStep Mentorship Program</title>
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+        }
+        .navbar .logo img {
+            max-height: 50px;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        .navbar .signup-btn {
+            background-color: #A873FF;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Main Section */
+        .main {
+            padding: 50px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main .text-section {
+            flex: 1;
+        }
+
+        .main .text-section h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            margin-top: 120px;
+        }
+
+        .main .text-section p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .main img {
+            flex: 1;
+            max-width: 50%;
+            height: auto;
+        }
+
+        /* Mentorship Types Section */
+        .mentorship-types {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .mentorship-types h2 {
+            font-size: 30px;
+            margin-bottom: 40px;
+            color: #AB78FF;
+            font-weight: bold;
+        }
+
+        .mentorship-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .mentorship-box {
+            background-color: #EFE4FF;
+            border-radius: 10px;
+            padding: 40px 20px;
+            width: 250px;
+            height: 300px;
+            border: 1px solid #AB78FF;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .mentorship-box h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .mentorship-box p {
+            font-size: 21px;
+            font-weight: 500;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        /* Session Structure Section */
+        .session-structure {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .session-structure h2 {
+            font-size: 32px;
+            color: #7f6eff;
+            margin-bottom: 50px;
+        }
+
+        /* Common Styles for Session Items */
+        .session-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+        
+        }
+
+        .session-item img {
+            width: 120px;
+            height: auto;
+            margin: 0 20px;
+        }
+
+        .session-item .content {
+            max-width: 400px;
+            text-align: left;
+        }
+
+        .session-item h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .session-item p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Even Numbered Items - Image on Right */
+        .session-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* Responsive for smaller screens */
+        @media (max-width: 768px) {
+            .session-item {
+                flex-direction: column;
+            }
+
+            .session-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .session-item img {
+                margin: 0 0 20px 0;
+            }
+
+            .session-item .content {
+                text-align: center;
+            }
+        }
+.session-info{
+    text-align: center;
+}
+
+/* Course Offer Section */
+.course-offer {
+    background: #fff;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Minimized width */
+    margin: 0 auto; /* Center the container */
+}
+
+.course-offer-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.offer-image {
+    width: 300px; /* Set a smaller width for the image */
+    margin-right: 20px;
+    border-radius: 10px; /* Optional: Add rounded corners to the image */
+}
+
+.course-offer-content {
+    flex: 1;
+    text-align: left; /* Align the text to the left */
+}
+
+.course-offer h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 18px; /* Reduced font size */
+    line-height: 1.4; /* Adjusted line height */
+}
+
+.course-offer p {
+    color: black;
+    font-size: 17px; /* Reduced font size */
+    margin-bottom: 10px;
+}
+
+
+.enroll-btn {
+    background-color: #A873FF;
+    color: white;
+    padding: 5px 10px; /* Reduced padding */
+    border-radius: 15px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 16px; /* Reduced font size */
+    font-weight: bolder;
+}
+/* Footer Section */
+footer {
+    background-color:white;
+    padding: 40px;
+    color: black;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.footer-left h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.footer-left p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-right ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-right ul li {
+    margin-bottom: 10px;
+}
+
+.footer-right ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 25px;
+    height: auto;
+}
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="Photos/logo2.png" alt="NextStep Logo">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <button class="signup-btn">Sign up</button>
+    </div>
+
+    <!-- Main Section -->
+    <div class="main">
+        <div class="text-section">
+            <h1>Mentorship Program</h1>
+            <p>Provide students with guidance from industry<br>
+             professionals to help them navigate their careers<br>
+              and personal development.</p>
+        </div>
+        <img src="Photos/mentorship2.png" alt="Mentorship Image">
+    </div>
+
+    <!-- Mentorship Types Section -->
+    <div class="mentorship-types">
+        <h2>Mentorship Types</h2>
+        <div class="mentorship-boxes">
+            <div class="mentorship-box">
+                <h3>One-on-One Mentorship</h3>
+                <p>Each student is<br>
+                 paired with a<br>
+                 mentor from the<br>
+                 industry, focusing<br>
+                 on personalized<br>
+                 career goals,<br>
+                 challenges, and skill <br>
+                 gaps.</p>
+            </div>
+            <div class="mentorship-box">
+                <h3>Group Mentorship</h3>
+                <p>Group sessions with multiple students led by a mentor. Discussion topics include career paths, handling job stress, workplace expectations, etc.</p>
+            </div>
+            <div class="mentorship-box">
+                <h3>Alumni Talks</h3>
+                <p>Regular sessions where successful alumni share their career stories, challenges faced, and provide tips for excelling in placements.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Session Structure Section -->
+    <div class="session-structure">
+        <h2>Session Structure</h2>
+
+        <div class="session-item">
+            <img src="Photos/presentation.png" alt="Introductory Session Icon">
+            <div class="content">
+                <h3>Introductory Session:</h3>
+                <p>Each mentor introduces themselves, followed by goal-setting with the mentee(s).</p>
+            </div>
+        </div>
+
+        <div class="session-item">
+            <img src="Photos/introduction.png" alt="Ongoing Sessions Icon">
+            <div class="content">
+                <h3>Ongoing Sessions:</h3>
+                <p>Regular one-on-one or group check-ins every few weeks.</p>
+            </div>
+        </div>
+
+        <div class="session-item">
+            <img src="Photos/traveling-2.png" alt="Career Mapping Icon">
+            <div class="content">
+                <h3>Career Mapping:</h3>
+                <p>Mentors help students map out their long-term career goals.</p>
+            </div>
+        </div>
+
+        <div class="session-item">
+            <img src="Photos/technology.png" alt="Technology Icon">
+            <div class="content">
+                <h3>Mock Interviews:</h3>
+                <p>Practice interview sessions to help students become familiar with real-world interview scenarios.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="session-info">
+        <p><strong>Duration:</strong> 1 hour per session.</p>
+        <p><strong>Frequency:</strong> One-on-one mentorship happens once every 2-3 weeks. Group mentorship or alumni talks can be held monthly.</p>
+    </div>
+</div>
+
+<!-- Course Offer Section -->
+<div class="course-offer">
+    <div class="course-offer-wrapper">
+        <img src="Photos/heroimage.png" alt="Students" class="offer-image">
+        <div class="course-offer-content">
+            <h3>"Unlock your potential, step into your<br>
+                 future because every great journey begins<br>
+                  with a single opportunity."</h3>
+                  <p>Join the 3-month course</p>
+                  <p>Get this all at just <strong>₹9999/-</strong></p>
+                   <a href="#" class="enroll-btn">Enroll now</a>
+        </div>
+    </div>
+</div>
+
+ <!-- Footer Section -->
+ <footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>NextStep Mentorship</h3>
+            <p>Helping students achieve their goals through personalized guidance and structured mentorship programs.</p>
+            <p>&copy; 2024 NextStep Mentorship. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><img src="Photos/facebook.jpg" alt="Facebook"></a>
+                <a href="#"><img src="Photos/twitter.jpg" alt="Twitter"></a>
+                <a href="#"><img src="Photos/linkedin.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+   <meta charset="utf-8">
+   <title>Admin Login - NextStep</title>
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: "Montserrat", sans-serif;
+      }
+      html, body {
+         height: 100%;
+      }
+
+      body {
+   display: grid;
+   place-items: center;
+   background: #fef8ff; /* Fallback color */
+   background-image: url('Photos/Lesson-bro.png'); /* Add your image URL here */
+   background-size: 80%; /* Control the image size (50% of the container width) */
+   background-repeat: no-repeat; /* Prevent the image from repeating */
+   background-position: center center; /* Center the image */
+   text-align: center;
+}
+ .content {
+         width: 330px;
+         padding: 40px 30px;
+         background: rgba(255, 255, 255, 0.8); /* Transparent white to contrast with background */
+         border-radius: 10px;
+         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .content .text {
+         font-size: 28px;
+         font-weight: 600;
+         margin-bottom: 35px;
+         color: #333; /* Neutral font color */
+      }
+      .field {
+         height: 50px;
+         width: 100%;
+         display: flex;
+         position: relative;
+         margin-bottom: 20px;
+      }
+      .field input {
+         height: 100%;
+         width: 100%;
+         padding-left: 45px;
+         outline: none;
+         border: 1px solid #ccc;
+         font-size: 16px;
+         background: #ffd6ff;
+         color: #333;
+         border-radius: 25px;
+         box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .field span {
+         position: absolute;
+         color: black;
+         width: 50px;
+         line-height: 50px;
+      }
+      .field label {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         left: 45px;
+         pointer-events: none;
+         color: black;
+      }
+      .forgot-pass {
+         text-align: left;
+         margin: 10px 0 10px 5px;
+      }
+      .forgot-pass a {
+         font-size: 16px;
+         color: black;
+         text-decoration: none;
+      }
+      .forgot-pass a:hover {
+         text-decoration: underline;
+      }
+      button {
+         margin: 15px 0;
+         width: 100%;
+         height: 50px;
+         font-size: 18px;
+         font-weight: 600;
+         background: #7d4f9f;
+         border-radius: 25px;
+         border: none;
+         outline: none;
+         cursor: pointer;
+         color: white;
+         transition: background 0.3s ease;
+      }
+      .sign-up {
+         margin: 10px 0;
+         color: #333;
+         font-size: 16px;
+      }
+      .sign-up a {
+         color: #3498db;
+         text-decoration: none;
+      }
+      .sign-up a:hover {
+         text-decoration: underline;
+      }
+   </style>
+
+   <div class="content">
+      <div class="text">
+         Admin Login
+      </div>
+      <form action="admin.php" method="POST">
+         <div class="field">
+            <input type="email" name="admin" id="admin" required>
+            <span class="fas fa-user"></span>
+            <label>Admin</label>
+         </div>
+         <div class="field">
+            <input type="password" name="admin_password" id="admin_password"  required>
+            <span class="fas fa-lock"></span>
+            <label>Password</label>
+         </div>
+         <div class="forgot-pass">
+            <a href="#">Forgot Password?</a>
+         </div>
+         <button type="submit">Login</button>
+      </form>
+   </div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextStep Chatbot</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .chatbot-container {
+            width: 350px;
+            height: 500px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .chatbot-header {
+            display: flex;
+            align-items: center; /* Ensures vertical alignment */
+            justify-content: space-between;
+            padding: 5px 10px;
+            background-color: #b300ff;
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            height: 50px;
+        }
+
+        .chatbot-title {
+            display: flex;
+            align-items: center; /* Aligns both the image and the text */
+        }
+
+        .chatbot-avatar {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            object-fit: cover; /* Ensures the image maintains aspect ratio */
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .chatbox {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .message {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        .message img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        .user {
+            justify-content: flex-end;
+        }
+
+        .user .message-content {
+            background-color: #b300ff;
+            color: white;
+            border-bottom-right-radius: 5px;
+            border-top-left-radius: 20px;
+            padding: 10px 15px;
+            max-width: 70%;
+        }
+
+        .bot {
+            justify-content: flex-start;
+        }
+
+        .bot .message-content {
+            background-color: #f1f1f1;
+            color: #333;
+            border-bottom-left-radius: 5px;
+            border-top-right-radius: 20px;
+            padding: 10px 15px;
+            max-width: 70%;
+        }
+
+        #userInput {
+            padding: 10px;
+            border: none;
+            border-top: 1px solid #ddd;
+            width: calc(100% - 60px);
+            box-sizing: border-box;
+            outline: none;
+            font-size: 14px;
+        }
+
+        #sendButton {
+            width: 60px;
+            background-color: #b300ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 15px;
+            outline: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        #sendButton:hover {
+            background-color: #9e00b3;
+        }
+
+        .chatbox-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+            position: sticky;
+            bottom: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <img src="computer.png" alt="Chatbot" class="chatbot-avatar">
+                <h3>NextStep Bot</h3>
+            </div>
+            <button class="close-btn" onclick="closeChatbot()">×</button>
+        </div>
+        <div class="chatbox">
+            <div id="messages"></div>
+        </div>
+        <div class="chatbox-footer">
+            <input type="text" id="userInput" placeholder="Type a message...">
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("sendButton").addEventListener("click", sendMessage);
+        document.getElementById("userInput").addEventListener("keypress", function (e) {
+            if (e.key === "Enter") sendMessage();
+        });
+
+        function sendMessage() {
+            let userInput = document.getElementById("userInput").value.trim();
+            if (userInput === "") return;
+
+            displayMessage(userInput, "user");
+            document.getElementById("userInput").value = "";
+
+            setTimeout(() => {
+                let botResponse = getBotResponse();
+                displayMessage(botResponse, "bot");
+            }, 500);
+        }
+
+        function displayMessage(text, sender) {
+            let messageContainer = document.createElement("div");
+            messageContainer.className = `message ${sender}`;
+
+            let avatar = document.createElement("img");
+            avatar.src = sender === "user" ? "boy.png" : "computer.png";
+            avatar.alt = `${sender} avatar`;
+            messageContainer.appendChild(avatar);
+
+            let messageContent = document.createElement("div");
+            messageContent.className = "message-content";
+            messageContent.innerText = text;
+            messageContainer.appendChild(messageContent);
+
+            let messages = document.getElementById("messages");
+            messages.appendChild(messageContainer);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function getBotResponse() {
+            const responses = [
+                "I'm here to help you with anything you need!",
+                "Could you please provide more details?",
+                "That's interesting! Tell me more.",
+                "How can I assist you further?",
+                "I'm not sure I understand, could you clarify?",
+                "Let's try to solve this together!",
+                "Feel free to ask me anything else."
+            ];
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+        
+
+        
+        function closeChatbot() {
+    // This will tell the parent window (index.html) to hide the chatbot iframe and show the image
+    window.parent.toggleChatbot();
+}
+
+      
+    </script>
+</body>
+</html>

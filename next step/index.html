@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Step</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom cursor elements -->
+   <div class="cursor"></div>
+   <div class="follower"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="Photos/logo2.png" alt="Next Step Logo Light" class="light-logo">
+            </div>
+            
+            
+            <div class="nav-container">
+                <ul>
+                    <li><a href="#" class="hover-target">Home</a></li>
+                    <li><a href="#" class="hover-target">Acivites</a></li>
+                    <li><a href="about.html" class="hover-target">About</a></li>
+                    <li><a href="contact.html" class="hover-target">Contact</a></li>
+                </ul>
+            </div>
+            <a href="signup.html" class="btn-enroll hover-target">Signup</a>
+            <a href="admin.html" class="btn-enroll hover-target">Admin</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-text">
+            <p class="intro-text">Hello <br>Students, We are</p>
+            <h1>Next Step</h1>
+            <p class="description">Empowering students and connecting them with top companies for career opportunities. Join us today and get started on your professional journey!</p>
+            <div class="cta-buttons">
+                <a href="student.html" class="btn-primary hover-target">Enroll Now</a>
+                <a href="#" class="btn-secondary hover-target">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="Photos/Group 21.png" alt="Hero Image">
+        </div>
+    </div>
+    </div>
+    <!-- Add the Light Bulb Section here -->
+<section class="light-bulb-section">
+    <img src="Photos/light-bulb.png" alt="Light Bulb Icon"> <!-- Update path to your light-bulb image -->
+    <div class="info">
+        <h2>"Unlock Your potetial, setp into your future<br>because every great journey begins with a <br>single opportunity"</h2>
+        
+    </div>
+</section>
+
+    <div class="chatbot-btn" onclick="toggleChatbot()">
+        <img src="Photos/text.png" alt="Chatbot Icon">
+    </div>
+    <iframe class="chatbot-frame" id="chatbotFrame" src="chatbot.html"></iframe>
+    <div class="chatbot-close-btn" onclick="toggleChatbot()"></div> <!-- Close button -->
+    
+
+ 
+    
+     <!-- Acitivities section -->
+     <section class="activities-section">
+        <h1>Activities</h1>
+
+        <div class="activity">
+        <div class="icon">
+         <img src="Photos/mentorship2.png" alt="Mentorship Icon">
+            </div>
+            <div class="content">
+                <h2>Mentorship Program:</h2>
+                <p>Connect students with industry professionals or alumni who can guide <br>
+                    them through their career paths.<br>
+                     Include features like one-on-one mentorship sessions, group discussions,<br>
+                      and networking opportunities.</p>
+                      <a href="mentorship.html">
+                <button class="explore-btn">Explore</button>
+            </div>
+        </div>
+
+        
+            <div class="activity">
+            <div class="icon">
+                <img src="Photos/Lesson-rafiki.png" alt="Communication Icon">
+            </div>
+            <div class="content">
+                <h2>Progress Tracker:</h2>
+                <p>The Progress Tracker will allow students and mentors to view progress in<br>
+                 real-time, highlighting achievements and areas for improvement. <br>
+                 This platform will facilitate transparent tracking of skills developed, milestones<br>
+                 reached, and feedback from mentors, enabling personalized growth plans<br>
+                 and targeted support.</p>
+                 
+                <button class="explore-btn">Explore</button>
+            </div>
+        </div>
+
+        <div class="activity">
+            <div class="icon">
+                <img src="Photos/Lesson-bro.png" alt="Skills Icon">
+            </div>
+            <div class="content">
+                <h2>Skill Development Sessions:</h2>
+                <p>Offer webinars or workshops on various skills like coding, data analysis,<br>
+                     project management, etc.<br>
+                     Partner with industry professionals to provide insight into trending skills ,<br>
+                     and tools.</p>
+                     <a href="skill.html">
+                <button class="explore-btn">Explore</button>
+            </div>
+        </div>
+
+        <div class="activity">
+        <div class="icon">
+        <img src="Photos/Lesson-amico.png" alt="Interview Icon">
+            </div>
+            <div class="content">
+                <h2>Mock Interview Sessions:</h2>
+                <p>Conduct mock interviews with industry experts to simulate the actual<br>
+                     interview experience.<br>
+                     Provide personalized feedback and recommendations for improvement.</p>
+                     <a href="mock.html">
+                <button class="explore-btn">Explore</button>
+            </div>
+        </div>
+    </section>
+
+
+
+ <!-- Dream Job Section -->
+<div class="dream-job">
+    <h2>Students achieved their <strong>DREAM JOB</strong> at</h2>
+    
+    <!-- Upper section for 6 logos -->
+    <div class="dream-job-upper">
+        <img src="Photos/amazon-logo.png" alt="Amazon" class="company-logo">
+        <img src="Photos/Google-logo.webp" alt="Google" class="company-logo">
+        <img src="Photos/microsofet logo.jpg" alt="Microsoft" class="company-logo">
+        <img src="Photos/PayPal-Logo.png" alt="PayPal" class="company-logo">
+        <img src="Photos/goldman sachs logo.png" alt="Meta" class="company-logo">
+        <img src="Photos/samsung logo.jpg" alt="Netflix" class="company-logo">
+    </div>
+
+    <!-- Lower section for 6 logos -->
+    <div class="dream-job-lower">
+        <img src="Photos/markitify.png" alt="Apple" class="company-logo">
+        <img src="Photos/NetApp-Logo.svg" alt="IBM" class="company-logo">
+        <img src="Photos/hitachi logo.png" alt="Adobe" class="company-logo">
+        <img src="Photos/jpmorgan logo.png" alt="Tesla" class="company-logo">
+        <img src="Photos/ibm-logo-.webp" alt="Nvidia" class="company-logo">
+        <img src="Photos/Asus-Logo.png" alt="Intel" class="company-logo">
+    </div>
+</div>
+
+
+<!-- Course Offer Section -->
+<div class="course-offer">
+    <div class="course-offer-wrapper">
+        <img src="Photos/Group 21.png" alt="Students" class="offer-image">
+        <div class="course-offer-content">
+            <h3>"Unlock your potential, step into your<br>
+                 future because every great journey begins<br>
+                  with a single opportunity."</h3>
+                  <p>Join the 3-month course</p>
+                  <p>Get this all at just <strong>₹9999/-</strong></p>
+                   <a href="#" class="enroll-btn">Enroll now</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Latest Job Opportunity Section -->
+<div class="job-opportunity">
+    <h2>Latest Job Opportunity</h2>
+    <div class="jobs-list">
+        <!-- Job 1 -->
+        <div class="job-card">
+            <div class="job-header">
+                <img src="Photos/Apple-Logo.jpg" alt="Apple Logo" class="job-logo">
+                <div class="job-details">
+                    <p>Company</p>
+                    <h3>Apple Computers</h3>
+                </div>
+            </div>
+            <hr class="job-divider"> <!-- Horizontal Line -->
+            <p>Job available</p>
+            <p><strong>16 Job opportunities</strong></p>
+            <div class="job-tags">
+                <span>Team Lead</span>
+                <span>Rapo M</span>
+                <span>3+</span>
+            </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="job-card">
+            <div class="job-header">
+                <img src="Photos/markitify logo.png" alt="Markitify Logo" class="job-logo">
+                <div class="job-details">
+                    <p>Company</p>
+                    <h3>Markitify Media</h3>
+                </div>
+            </div>
+            <hr class="job-divider"> <!-- Horizontal Line -->
+            <p>Job available</p>
+            <p><strong>25 Job opportunities</strong></p>
+            <div class="job-tags">
+                <span>Designer</span>
+                <span>Tech Head</span>
+                <span>3+</span>
+            </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="job-card">
+            <div class="job-header">
+                <img src="Photos/adobe logo.png" alt="Adobe Logo" class="job-logo">
+                <div class="job-details">
+                    <p>Company</p>
+                    <h3>Adobe Creative</h3>
+                </div>
+            </div>
+            <hr class="job-divider"> <!-- Horizontal Line -->
+            <p>Job available</p>
+            <p><strong>16 Job opportunities</strong></p>
+            <div class="job-tags">
+                <span>Team Lead</span>
+                <span>Rapo M</span>
+                <span>3+</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer Section -->
+<footer class="footer-section">
+    <div class="footer-content">
+        <!-- Left Section: Contact Info & Image -->
+        <div class="footer-left">
+            <img src="Photos/Mobile Marketing-bro.png" alt="Social Media Image" class="footer-image">
+            <div class="footer-left-text">
+                <h2>Contact us</h2>
+                <hr class="footer-underline">
+                <p>Email: info@nextstep.com</p>
+                <p>Phone: 9011663100</p>
+                <img src="Photos/logo2.png" alt="NextStep Logo" class="footer-logo">
+            </div>
+        </div>
+
+        <!-- Center Section: Company Information & Links -->
+        <div class="footer-center">
+            <h3>About NextStep</h3>
+            <p>NextStep is a leading platform dedicated to bridging the gap between students and employers, providing valuable resources for placement preparation and career development.</p>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Placements</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Section: Social Media & Newsletter -->
+        <div class="footer-right">
+            <div class="footer-subscribe">
+                <h3>Subscribe to our newsletter</h3>
+                <form action="#">
+                    <input type="email" name="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <div class="social-links">
+                <h3>Follow Us</h3>
+                <a href="#"><img src="Photos/facebook.jpg" alt="Facebook"></a>
+                <a href="#"><img src="Photos/twitter.jpg" alt="Twitter"></a>
+                <a href="#"><img src="Photos/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="Photos/instagram.jpg" alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <div class="footer-bottom">
+        <p>nextstep.in &copy; Copyright 2024</p>
+        <div class="back-to-top">
+            <a href="#">Back to top</a>
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+  let isChatbotOpen = false;
+
+function toggleChatbot() {
+    const chatbotFrame = document.getElementById("chatbotFrame");
+    const closeButton = document.querySelector(".chatbot-close-btn");
+    const chatbotIcon = document.querySelector(".chatbot-btn img");
+
+    if (!isChatbotOpen) {
+        // Open the chatbot
+        chatbotFrame.style.display = "block";
+        closeButton.style.display = "flex"; // Show close button
+        chatbotIcon.style.display = "none"; // Hide chatbot icon when open
+        isChatbotOpen = true; // Set the flag to true
+    } else {
+        // Close the chatbot
+        chatbotFrame.style.display = "none";
+        closeButton.style.display = "none"; // Hide close button
+        chatbotIcon.style.display = "block"; // Show chatbot icon when closed
+        isChatbotOpen = false; // Set the flag to false
+    }
+}
+
+
+const cursor = document.querySelector('.cursor');
+const follower = document.querySelector('.follower');
+
+let mouseX = 0, mouseY = 0;
+let followerX = 0, followerY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    // Get the mouse position
+    mouseX = e.clientX + window.scrollX; // Account for horizontal scroll
+    mouseY = e.clientY + window.scrollY; // Account for vertical scroll
+
+    // Move the small cursor directly
+    cursor.style.left = `${mouseX}px`;
+    cursor.style.top = `${mouseY}px`;
+});
+
+// Optional: Smooth follower movement
+setInterval(() => {
+    followerX += (mouseX - followerX) / 5;
+    followerY += (mouseY - followerY) / 5;
+
+    follower.style.left = `${followerX}px`;
+    follower.style.top = `${followerY}px`;
+}, 16); // 60 FPS
+
+function animateFollower() {
+    // Lerp to create the gooey trailing effect
+    followerX += (mouseX - followerX) * 0.1;
+    followerY += (mouseY - followerY) * 0.1;
+
+    follower.style.left = `${followerX - 25}px`;
+    follower.style.top = `${followerY - 25}px`;
+
+    requestAnimationFrame(animateFollower);
+}
+
+// Start the follower animation
+animateFollower();
+// script for navbar resposive
+function toggleMenu() {
+    const nav = document.querySelector('.nav-container ul');
+    nav.classList.toggle('active');
+    const hamburger = document.querySelector('.hamburger');
+    hamburger.classList.toggle('open');
+}
+
+function explore(activity) {
+            alert('You have selected the ' + activity + ' activity.');
+        }
+
+</script>
+</body>
+</html>
